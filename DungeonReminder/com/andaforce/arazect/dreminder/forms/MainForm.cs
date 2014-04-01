@@ -59,12 +59,17 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
                 _bindingList.ResetBindings();
             }
 
-            for (int i = 0; i < dgvDungeons.Rows.Count; i += 2)
+            // Color
+            for (int i = 0; i < drc.Dungeons.Count; i++)
             {
-                dgvDungeons.Rows[i].DefaultCellStyle = new DataGridViewCellStyle()
-                {
-                    BackColor = Color.LightGray
-                };
+                dgvDungeons.Rows[i].DefaultCellStyle =
+                    new DataGridViewCellStyle()
+                    {
+                        BackColor =
+                            drc.Dungeons[i].IsCompleted
+                                ? Color.LightGreen
+                                : i % 2 == 0 ? Color.LightGray : Color.White
+                    };
             }
         }
 
@@ -89,6 +94,8 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
                 }
             }
         }
+
+
 
         #endregion
 
@@ -115,5 +122,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
         {
             dgvDungeons.Height = Height - 100;
         }
+
+
     }
 }
