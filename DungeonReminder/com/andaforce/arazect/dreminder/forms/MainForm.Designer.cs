@@ -48,8 +48,9 @@
             this.Completed});
             this.dgvDungeons.Location = new System.Drawing.Point(12, 12);
             this.dgvDungeons.Name = "dgvDungeons";
+            this.dgvDungeons.RowHeadersVisible = false;
             this.dgvDungeons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDungeons.Size = new System.Drawing.Size(580, 150);
+            this.dgvDungeons.Size = new System.Drawing.Size(620, 440);
             this.dgvDungeons.TabIndex = 1;
             this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
             this.dgvDungeons.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellValueChanged);
@@ -57,28 +58,30 @@
             // Dungeon
             // 
             this.Dungeon.DataPropertyName = "DungeonName";
-            this.Dungeon.HeaderText = "Dungeons";
+            this.Dungeon.HeaderText = "Dungeon";
             this.Dungeon.Name = "Dungeon";
             this.Dungeon.ReadOnly = true;
+            this.Dungeon.Width = 200;
             // 
             // Path
             // 
             this.Path.DataPropertyName = "PathName";
-            this.Path.HeaderText = "PathName";
+            this.Path.HeaderText = "Path Name";
             this.Path.Name = "Path";
             this.Path.ReadOnly = true;
+            this.Path.Width = 200;
             // 
             // Reward
             // 
             this.Reward.DataPropertyName = "GoldReward";
-            this.Reward.HeaderText = "GoldReward";
+            this.Reward.HeaderText = "Gold Reward";
             this.Reward.Name = "Reward";
             this.Reward.ReadOnly = true;
             // 
             // Completed
             // 
             this.Completed.DataPropertyName = "IsCompleted";
-            this.Completed.HeaderText = "IsCompleted";
+            this.Completed.HeaderText = "Completed";
             this.Completed.Name = "Completed";
             this.Completed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Completed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -87,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 385);
+            this.ClientSize = new System.Drawing.Size(648, 480);
             this.Controls.Add(this.dgvDungeons);
             this.Name = "MainForm";
             this.Text = "MainForm";

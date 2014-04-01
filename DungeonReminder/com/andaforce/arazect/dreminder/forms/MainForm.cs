@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DungeonReminder.com.andaforce.arazect.axna.configuration;
@@ -32,6 +33,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
             dgvDungeons.DataSource = null;
             _bindingList = new BindingList<Dungeon>(drc.Dungeons);
             dgvDungeons.DataSource = _bindingList;
+
         }
 
         #region Grid
