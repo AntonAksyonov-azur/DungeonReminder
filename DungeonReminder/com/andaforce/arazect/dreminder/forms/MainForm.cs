@@ -77,6 +77,15 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
 
         #region Grid
 
+        private void dgvDungeons_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dgvDungeons.Rows[e.RowIndex].Cells[3].Value =
+                    !Convert.ToBoolean(dgvDungeons.Rows[e.RowIndex].Cells[3].Value);
+            }
+        }
+
         private void dgvDungeons_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvDungeons.CommitEdit(DataGridViewDataErrorContexts.Commit);
@@ -126,5 +135,6 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
         {
             dgvDungeons.Height = Height - 100;
         }
+
     }
 }

@@ -60,8 +60,10 @@
             this.dgvDungeons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDungeons.Size = new System.Drawing.Size(392, 330);
             this.dgvDungeons.TabIndex = 1;
+            this.dgvDungeons.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellClick);
             this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
             this.dgvDungeons.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
+            this.dgvDungeons.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellClick);
             this.dgvDungeons.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellValueChanged);
             this.dgvDungeons.SelectionChanged += new System.EventHandler(this.dgvDungeons_SelectionChanged);
             // 
