@@ -89,6 +89,8 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
                 var checkBox = dgvDungeons.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
                 if (checkBox != null)
                 {
+                    _drc.LastUpdateDate = DateTime.Now;
+
                     RefreshBindings();
                     SaveCurrent();
                 }
@@ -97,14 +99,13 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
 
         private void dgvDungeons_SelectionChanged(object sender, EventArgs e)
         {
-           dgvDungeons.ClearSelection();
+            dgvDungeons.ClearSelection();
         }
 
         #endregion
 
         private void SaveCurrent()
         {
-            _drc.LastUpdateDate = DateTime.Now;
             _drc.Dungeons = _bindingList.ToList();
 
             ConfigurationLoader.SaveConfiguration(_drc, Filename);
@@ -125,7 +126,5 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
         {
             dgvDungeons.Height = Height - 100;
         }
-
-
     }
 }
