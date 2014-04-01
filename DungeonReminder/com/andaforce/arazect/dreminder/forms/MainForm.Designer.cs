@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvDungeons = new System.Windows.Forms.DataGridView();
+            this.Dungeon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reward = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Completed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslTotalGold = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnResetAll = new System.Windows.Forms.Button();
-            this.Dungeon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reward = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Completed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDungeons)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,8 +61,46 @@
             this.dgvDungeons.Size = new System.Drawing.Size(392, 330);
             this.dgvDungeons.TabIndex = 1;
             this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
+            this.dgvDungeons.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
             this.dgvDungeons.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellValueChanged);
             this.dgvDungeons.SelectionChanged += new System.EventHandler(this.dgvDungeons_SelectionChanged);
+            // 
+            // Dungeon
+            // 
+            this.Dungeon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Dungeon.DataPropertyName = "DungeonName";
+            this.Dungeon.HeaderText = "Dungeon";
+            this.Dungeon.Name = "Dungeon";
+            this.Dungeon.ReadOnly = true;
+            this.Dungeon.Width = 140;
+            // 
+            // Path
+            // 
+            this.Path.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Path.DataPropertyName = "PathName";
+            this.Path.HeaderText = "Path Name";
+            this.Path.Name = "Path";
+            this.Path.ReadOnly = true;
+            this.Path.Width = 140;
+            // 
+            // Reward
+            // 
+            this.Reward.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Reward.DataPropertyName = "GoldReward";
+            this.Reward.HeaderText = "Gold";
+            this.Reward.Name = "Reward";
+            this.Reward.ReadOnly = true;
+            this.Reward.Width = 32;
+            // 
+            // Completed
+            // 
+            this.Completed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Completed.DataPropertyName = "IsCompleted";
+            this.Completed.HeaderText = "Completed";
+            this.Completed.Name = "Completed";
+            this.Completed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Completed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Completed.Width = 60;
             // 
             // statusStrip1
             // 
@@ -103,43 +141,6 @@
             this.btnResetAll.Text = "Reset All";
             this.btnResetAll.UseVisualStyleBackColor = true;
             this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
-            // 
-            // Dungeon
-            // 
-            this.Dungeon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Dungeon.DataPropertyName = "DungeonName";
-            this.Dungeon.HeaderText = "Dungeon";
-            this.Dungeon.Name = "Dungeon";
-            this.Dungeon.ReadOnly = true;
-            this.Dungeon.Width = 140;
-            // 
-            // Path
-            // 
-            this.Path.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Path.DataPropertyName = "PathName";
-            this.Path.HeaderText = "Path Name";
-            this.Path.Name = "Path";
-            this.Path.ReadOnly = true;
-            this.Path.Width = 140;
-            // 
-            // Reward
-            // 
-            this.Reward.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Reward.DataPropertyName = "GoldReward";
-            this.Reward.HeaderText = "Gold";
-            this.Reward.Name = "Reward";
-            this.Reward.ReadOnly = true;
-            this.Reward.Width = 32;
-            // 
-            // Completed
-            // 
-            this.Completed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Completed.DataPropertyName = "IsCompleted";
-            this.Completed.HeaderText = "Completed";
-            this.Completed.Name = "Completed";
-            this.Completed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Completed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Completed.Width = 60;
             // 
             // MainForm
             // 
