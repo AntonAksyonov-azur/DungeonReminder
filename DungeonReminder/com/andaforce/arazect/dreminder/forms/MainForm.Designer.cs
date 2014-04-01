@@ -62,6 +62,7 @@
             this.dgvDungeons.TabIndex = 1;
             this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
             this.dgvDungeons.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellValueChanged);
+            this.dgvDungeons.SelectionChanged += new System.EventHandler(this.dgvDungeons_SelectionChanged);
             // 
             // statusStrip1
             // 

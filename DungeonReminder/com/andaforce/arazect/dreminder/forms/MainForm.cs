@@ -95,7 +95,10 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
             }
         }
 
-
+        private void dgvDungeons_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvDungeons.ClearSelection();
+        }
 
         #endregion
 
