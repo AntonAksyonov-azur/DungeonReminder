@@ -54,6 +54,7 @@
             this.Reward,
             this.Completed});
             this.dgvDungeons.Location = new System.Drawing.Point(12, 44);
+            this.dgvDungeons.MultiSelect = false;
             this.dgvDungeons.Name = "dgvDungeons";
             this.dgvDungeons.RowHeadersVisible = false;
             this.dgvDungeons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
