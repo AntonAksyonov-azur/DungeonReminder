@@ -110,5 +110,11 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
             _drc.Dungeons.ForEach(a => a.IsCompleted = false);
             RefreshBindings();
         }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            this.Text = this.Height.ToString();
+            dgvDungeons.Height = Height - 100;
+        }
     }
 }

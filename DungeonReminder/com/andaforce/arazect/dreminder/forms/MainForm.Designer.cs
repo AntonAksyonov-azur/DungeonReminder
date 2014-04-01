@@ -53,7 +53,7 @@
             this.Path,
             this.Reward,
             this.Completed});
-            this.dgvDungeons.Location = new System.Drawing.Point(12, 12);
+            this.dgvDungeons.Location = new System.Drawing.Point(12, 44);
             this.dgvDungeons.Name = "dgvDungeons";
             this.dgvDungeons.RowHeadersVisible = false;
             this.dgvDungeons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -68,9 +68,9 @@
             this.tsslDate,
             this.toolStripStatusLabel2,
             this.tsslTotalGold});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 390);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 381);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(643, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(642, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -94,7 +94,7 @@
             // 
             // btnResetAll
             // 
-            this.btnResetAll.Location = new System.Drawing.Point(557, 348);
+            this.btnResetAll.Location = new System.Drawing.Point(554, 12);
             this.btnResetAll.Name = "btnResetAll";
             this.btnResetAll.Size = new System.Drawing.Size(75, 23);
             this.btnResetAll.TabIndex = 3;
@@ -141,16 +141,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 412);
+            this.ClientSize = new System.Drawing.Size(642, 403);
             this.Controls.Add(this.btnResetAll);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvDungeons);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(650, 670);
+            this.MinimumSize = new System.Drawing.Size(650, 185);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDungeons)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
