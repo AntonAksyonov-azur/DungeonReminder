@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using DungeonReminder.com.andaforce.arazect.axna.configuration;
 using DungeonReminder.com.andaforce.arazect.dreminder.data;
@@ -7,8 +9,10 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
 {
     public partial class MainForm : Form
     {
+        private const String Filename = "drm_value.xml";
         private DungeonReminderConfiguration _drc;
         private bool _gridIsUpdating;
+        private BindingList<Dungeon> _bindingList;
 
         public MainForm()
         {
@@ -18,7 +22,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
         private void MainForm_Load(object sender, System.EventArgs e)
         {
             _drc = ConfigurationLoader
-                .LoadConfiguration<DungeonReminderConfiguration>("config.xml");
+                .LoadConfiguration<DungeonReminderConfiguration>(Filename);
 
             RefreshDataBinding(_drc);
         }
@@ -26,7 +30,8 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
         private void RefreshDataBinding(DungeonReminderConfiguration drc)
         {
             dgvDungeons.DataSource = null;
-            dgvDungeons.DataSource = new BindingList<Dungeon>(drc.Dungeons);
+            _bindingList = new BindingList<Dungeon>(drc.Dungeons);
+            dgvDungeons.DataSource = _bindingList;
         }
 
         #region Grid
@@ -36,7 +41,6 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
             dgvDungeons.CommitEdit(DataGridViewDataErrorContexts.Commit);
         }
 
-
         private void dgvDungeons_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex != -1 && e.RowIndex != -1)
@@ -44,11 +48,24 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
                 var checkBox = dgvDungeons.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
                 if (checkBox != null)
                 {
-                    MessageBox.Show(checkBox.Value.ToString(), "Caption");
+                    SaveCurrent();
                 }
             }
         }
+
         #endregion
 
+        private void SaveCurrent()
+        {
+            _drc.LastUpdated = DateTime.Now;
+            _drc.Dungeons = _bindingList.ToList();
+
+            ConfigurationLoader.SaveConfiguration(_drc, Filename);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveCurrent();
+        }
     }
 }
