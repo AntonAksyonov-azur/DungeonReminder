@@ -52,7 +52,6 @@
             this.dgvDungeons.Size = new System.Drawing.Size(580, 150);
             this.dgvDungeons.TabIndex = 1;
             this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
-            this.dgvDungeons.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDungeons_CellFormatting);
             this.dgvDungeons.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellValueChanged);
             // 
             // Dungeon
