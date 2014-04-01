@@ -59,7 +59,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
 
         private void SaveCurrent()
         {
-            _drc.LastUpdated = DateTime.Now;
+            _drc.LastUpdateDate = DateTime.Now;
             _drc.Dungeons = _bindingList.ToList();
 
             ConfigurationLoader.SaveConfiguration(_drc, Filename);

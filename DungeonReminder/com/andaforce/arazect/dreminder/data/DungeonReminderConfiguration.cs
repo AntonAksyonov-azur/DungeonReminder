@@ -6,12 +6,12 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.data
 {
     public class DungeonReminderConfiguration : IConfigurationObject
     {
-        public DateTime LastUpdated;
+        public DateTime LastUpdateDate;
         public List<Dungeon> Dungeons;
 
         public void InitDefault()
         {
-            LastUpdated = DateTime.Now;
+            LastUpdateDate = DateTime.Now;
             Dungeons = new List<Dungeon>()
             {
                 new Dungeon() {DungeonName = "Ascalonian Catacombs", PathName = "Path 1 - Hodgins", GoldReward = 1.5f},
