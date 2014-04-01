@@ -28,47 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDungeons = new System.Windows.Forms.DataGridView();
             this.Dungeon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reward = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Completed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDungeons)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDungeons
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDungeons.AllowUserToAddRows = false;
+            this.dgvDungeons.AllowUserToDeleteRows = false;
+            this.dgvDungeons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDungeons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Dungeon,
             this.Path,
             this.Reward,
             this.Completed});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(580, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvDungeons.Location = new System.Drawing.Point(12, 12);
+            this.dgvDungeons.Name = "dgvDungeons";
+            this.dgvDungeons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDungeons.Size = new System.Drawing.Size(580, 150);
+            this.dgvDungeons.TabIndex = 1;
+            this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
+            this.dgvDungeons.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDungeons_CellFormatting);
+            this.dgvDungeons.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellValueChanged);
             // 
             // Dungeon
             // 
-            this.Dungeon.HeaderText = "Dungeon";
+            this.Dungeon.DataPropertyName = "DungeonName";
+            this.Dungeon.HeaderText = "Dungeons";
             this.Dungeon.Name = "Dungeon";
             this.Dungeon.ReadOnly = true;
             // 
             // Path
             // 
-            this.Path.HeaderText = "Path";
+            this.Path.DataPropertyName = "PathName";
+            this.Path.HeaderText = "PathName";
             this.Path.Name = "Path";
             this.Path.ReadOnly = true;
             // 
             // Reward
             // 
-            this.Reward.HeaderText = "Reward";
+            this.Reward.DataPropertyName = "GoldReward";
+            this.Reward.HeaderText = "GoldReward";
             this.Reward.Name = "Reward";
             this.Reward.ReadOnly = true;
             // 
             // Completed
             // 
+            this.Completed.DataPropertyName = "IsCompleted";
             this.Completed.HeaderText = "IsCompleted";
             this.Completed.Name = "Completed";
             this.Completed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -79,17 +89,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 385);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDungeons);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDungeons)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDungeons;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dungeon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Path;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reward;

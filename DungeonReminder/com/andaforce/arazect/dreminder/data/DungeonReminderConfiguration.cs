@@ -7,27 +7,26 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.data
     public class DungeonReminderConfiguration : IConfigurationObject
     {
         public DateTime LastUpdated;
-        public List<DungeonData> Dungeon;
+        public List<Dungeon> Dungeons;
 
         public void InitDefault()
         {
             LastUpdated = DateTime.Now;
-            Dungeon = new List<DungeonData>();
+            Dungeons = new List<Dungeon>()
+            {
+                new Dungeon() {DungeonName = "Ascalonian Catacombs", PathName = "PathName 1", GoldReward = 1.5f},
+                new Dungeon() {DungeonName = "Ascalonian Catacombs", PathName = "PathName 2", GoldReward = 1.5f},
+                new Dungeon() {DungeonName = "Ascalonian Catacombs", PathName = "PathName 3", GoldReward = 1.5f}
+            };
         }
     }
 
-    public class DungeonData
+    public class Dungeon
     {
-        public String DungeonName;
-        public String PathName;
-        public Single GoldReward;
-        public bool IsCompleted;
-
-        public DungeonData(string dungeonName, string pathName, float goldReward)
-        {
-            DungeonName = dungeonName;
-            PathName = pathName;
-            GoldReward = goldReward;
-        }
+        public String DungeonName { get; set; }
+        public String PathName { get; set; }
+        public Single GoldReward { get; set; }
+        public bool IsCompleted { get; set; }
     }
+
 }
