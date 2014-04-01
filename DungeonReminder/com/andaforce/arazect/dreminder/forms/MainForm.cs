@@ -20,21 +20,55 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, System.EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             _drc = ConfigurationLoader
                 .LoadConfiguration<DungeonReminderConfiguration>(Filename);
 
-            RefreshDataBinding(_drc);
+            RefreshBindings();
         }
 
-        private void RefreshDataBinding(DungeonReminderConfiguration drc)
+        #region Bindings
+
+        private void RefreshBindings()
         {
-            dgvDungeons.DataSource = null;
-            _bindingList = new BindingList<Dungeon>(drc.Dungeons);
-            dgvDungeons.DataSource = _bindingList;
-
+            RefreshDataGrid(_drc);
+            RefreshLabels(_drc);
         }
+
+        private void RefreshLabels(DungeonReminderConfiguration drc)
+        {
+            tsslDate.Text = String.Format("Last updated at: {0}", drc.LastUpdateDate);
+            tsslTotalGold.Text = String.Format(
+                "Total gold earned: {0}",
+                drc.Dungeons
+                    .Where(a => a.IsCompleted)
+                    .Sum(a => a.GoldReward));
+        }
+
+        private void RefreshDataGrid(DungeonReminderConfiguration drc)
+        {
+            //            dgvDungeons.DataSource = null;
+            if (dgvDungeons.DataSource == null)
+            {
+                _bindingList = new BindingList<Dungeon>(drc.Dungeons);
+                dgvDungeons.DataSource = _bindingList;
+            }
+            else
+            {
+                _bindingList.ResetBindings();
+            }
+
+            for (int i = 0; i < dgvDungeons.Rows.Count; i += 2)
+            {
+                dgvDungeons.Rows[i].DefaultCellStyle = new DataGridViewCellStyle()
+                {
+                    BackColor = Color.LightGray
+                };
+            }
+        }
+
+        #endregion
 
         #region Grid
 
@@ -50,6 +84,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
                 var checkBox = dgvDungeons.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
                 if (checkBox != null)
                 {
+                    RefreshBindings();
                     SaveCurrent();
                 }
             }
@@ -73,6 +108,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
         private void btnResetAll_Click(object sender, EventArgs e)
         {
             _drc.Dungeons.ForEach(a => a.IsCompleted = false);
+            RefreshBindings();
         }
     }
 }
