@@ -48,7 +48,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
 
         private void RefreshDataGrid(DungeonReminderConfiguration drc)
         {
-            //            dgvDungeons.DataSource = null;
+            // dgvDungeons.DataSource = null;
             if (dgvDungeons.DataSource == null)
             {
                 _bindingList = new BindingList<Dungeon>(drc.Dungeons);
@@ -56,7 +56,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
             }
             else
             {
-                _bindingList.ResetBindings();
+                //_bindingList.ResetBindings();
             }
 
             // Color
@@ -97,7 +97,7 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
 
         private void dgvDungeons_SelectionChanged(object sender, EventArgs e)
         {
-            dgvDungeons.ClearSelection();
+           dgvDungeons.ClearSelection();
         }
 
         #endregion
