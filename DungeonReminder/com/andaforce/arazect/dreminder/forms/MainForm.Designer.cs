@@ -149,7 +149,7 @@
             this.MaximumSize = new System.Drawing.Size(650, 670);
             this.MinimumSize = new System.Drawing.Size(650, 185);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Dungeon Reminder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);

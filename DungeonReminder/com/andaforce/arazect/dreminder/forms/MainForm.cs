@@ -113,7 +113,6 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            this.Text = this.Height.ToString();
             dgvDungeons.Height = Height - 100;
         }
     }
