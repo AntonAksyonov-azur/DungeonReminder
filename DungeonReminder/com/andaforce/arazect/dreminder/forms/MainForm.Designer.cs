@@ -57,7 +57,7 @@
             this.dgvDungeons.Name = "dgvDungeons";
             this.dgvDungeons.RowHeadersVisible = false;
             this.dgvDungeons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDungeons.Size = new System.Drawing.Size(620, 330);
+            this.dgvDungeons.Size = new System.Drawing.Size(392, 330);
             this.dgvDungeons.TabIndex = 1;
             this.dgvDungeons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellContentClick);
             this.dgvDungeons.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDungeons_CellValueChanged);
@@ -70,7 +70,7 @@
             this.tsslTotalGold});
             this.statusStrip1.Location = new System.Drawing.Point(0, 381);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(642, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(412, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -94,7 +94,7 @@
             // 
             // btnResetAll
             // 
-            this.btnResetAll.Location = new System.Drawing.Point(554, 12);
+            this.btnResetAll.Location = new System.Drawing.Point(329, 12);
             this.btnResetAll.Name = "btnResetAll";
             this.btnResetAll.Size = new System.Drawing.Size(75, 23);
             this.btnResetAll.TabIndex = 3;
@@ -109,7 +109,7 @@
             this.Dungeon.HeaderText = "Dungeon";
             this.Dungeon.Name = "Dungeon";
             this.Dungeon.ReadOnly = true;
-            this.Dungeon.Width = 200;
+            this.Dungeon.Width = 140;
             // 
             // Path
             // 
@@ -118,15 +118,16 @@
             this.Path.HeaderText = "Path Name";
             this.Path.Name = "Path";
             this.Path.ReadOnly = true;
-            this.Path.Width = 200;
+            this.Path.Width = 140;
             // 
             // Reward
             // 
             this.Reward.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Reward.DataPropertyName = "GoldReward";
-            this.Reward.HeaderText = "Gold Reward";
+            this.Reward.HeaderText = "Gold";
             this.Reward.Name = "Reward";
             this.Reward.ReadOnly = true;
+            this.Reward.Width = 32;
             // 
             // Completed
             // 
@@ -136,18 +137,19 @@
             this.Completed.Name = "Completed";
             this.Completed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Completed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Completed.Width = 60;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 403);
+            this.ClientSize = new System.Drawing.Size(412, 403);
             this.Controls.Add(this.btnResetAll);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvDungeons);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(650, 670);
-            this.MinimumSize = new System.Drawing.Size(650, 185);
+            this.MaximumSize = new System.Drawing.Size(420, 670);
+            this.MinimumSize = new System.Drawing.Size(420, 185);
             this.Name = "MainForm";
             this.Text = "Dungeon Reminder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
