@@ -69,5 +69,10 @@ namespace DungeonReminder.com.andaforce.arazect.dreminder.forms
         {
             SaveCurrent();
         }
+
+        private void btnResetAll_Click(object sender, EventArgs e)
+        {
+            _drc.Dungeons.ForEach(a => a.IsCompleted = false);
+        }
     }
 }
